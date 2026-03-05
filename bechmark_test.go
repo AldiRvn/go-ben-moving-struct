@@ -2,12 +2,10 @@ package gobenmovingstruct
 
 import (
 	"encoding/json"
-	"fmt"
 	"testing"
 )
 
 func Benchmark_normalPerField(b *testing.B) {
-	fmt.Println("normalPerField()")
 	for b.Loop() {
 		sessionNew := DeviceSessionNew{
 			New:          true,
@@ -37,7 +35,6 @@ func Benchmark_normalPerField(b *testing.B) {
 }
 
 func Benchmark_marshallUnmarshall(b *testing.B) {
-	fmt.Println("marshallUnmarshall()")
 	for b.Loop() {
 		sessionByte, _ := json.Marshal(session)
 		newSession := DeviceSessionNew{}
